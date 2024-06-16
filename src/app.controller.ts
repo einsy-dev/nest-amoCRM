@@ -5,8 +5,8 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
-  async getLeads(@Query() query): Promise<any> {
+  @Get('api/leads')
+  async getLeads(@Query() query): Promise<Array<any>> {
     return this.appService.getLeads(query);
   }
 }
