@@ -12,7 +12,6 @@ export class AppService {
   }
   async getLeads({ query }): Promise<any> {
     const res: any = await this.client.request.get('/api/v4/leads', query);
-    console.log(res.data);
     return res.data;
   }
 }
