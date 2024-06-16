@@ -10,8 +10,9 @@ export class AppService {
       this.client = await this.AmocrmService.client();
     })();
   }
-  async getLeads(): Promise<any> {
-    const res = await this.client.leads.get();
-    return res.getData();
+  async getLeads({ query }): Promise<any> {
+    const res: any = await this.client.request.get('/api/v4/leads', query);
+    console.log(res.data);
+    return res.data;
   }
 }
